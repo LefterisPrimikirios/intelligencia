@@ -7,7 +7,7 @@ and store them in PostgreSQL Database.
 ## Description ##
 In the app folder, there is a `main.py` module which is the starting point.
 
-Define the bellow paramaters:
+Define the bellow parameters:
 
 start_page: The page to start accessing the data.
 size: The number of items returned, up to a maximum of 500 for a single request.
