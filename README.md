@@ -2,8 +2,8 @@
 
 This implementation is responsible to retrieve specific data provided by the Ontology Lookup Service repository https://www.ebi.ac.uk/ols/index through the API (https://www.ebi.ac.uk/ols/docs/api)
 and store them in PostgreSQL Database.  
-EFO terms and EFO term synonyms will be retrieved from the endpoint:"https://www.ebi.ac.uk/ols/api/ontologies/efo/terms"   
-EFO term ontology (parent links) will be retrieved from the parent link of each EFO term, meaning that for each EFO term an extra API call 
+`EFO terms` and `EFO term synonyms` will be retrieved from the endpoint:"https://www.ebi.ac.uk/ols/api/ontologies/efo/terms"   
+`EFO term ontology (parent links)` will be retrieved from the parent link of each EFO term, meaning that for each EFO term an extra API call 
 will be executed if the parent link is available.
 
 ## Description ##
