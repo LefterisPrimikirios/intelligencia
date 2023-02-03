@@ -35,21 +35,21 @@ Set the parameters: `start_page` and `page_limit` accordingly to have incrementa
 1. Create a virtual enviroment:   
     python3 -m venv venv
 
-2. Activate the venv:
+2. Activate the venv:  
     source ./venv/bin/activate
 
-3. Install requirements.txt:
-    cd app
-    pip install -r requirements.txt
+3. Install requirements.txt:  
+    cd app  
+    pip install -r requirements.txt  
 
 4. Define the required parameters in `create_postgresql_db.py` module:
     
-    conn = psycopg2.connect(
-        host=" ",
-        database=" ",
-        user=" ",
-        password=" "
-    )    
+    conn = psycopg2.connect(  
+        host=" ",  
+        database=" ",  
+        user=" ",  
+        password=" "  
+    )      
 and execute the file to create the database with the required tables and indexes.
 
 5. Define the requested parameters and execute the `main.py` module
