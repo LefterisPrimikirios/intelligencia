@@ -1,8 +1,8 @@
 # OLS Ontology Search #
 
-This implementation is responsible to retrieve specific data provided by the Ontology Lookup Service repository https://www.ebi.ac.uk/ols/index
-and store them in PostgreSQL Database.
-EFO terms and EFO term synonyms will be retrieved from the endpoint:"https://www.ebi.ac.uk/ols/api/ontologies/efo/terms"
+This implementation is responsible to retrieve specific data provided by the Ontology Lookup Service repository https://www.ebi.ac.uk/ols/index  
+and store them in PostgreSQL Database.   
+EFO terms and EFO term synonyms will be retrieved from the endpoint:"https://www.ebi.ac.uk/ols/api/ontologies/efo/terms"   
 EFO term ontology (parent links) will be retrieved from the parent link of each EFO term, meaning that for each EFO term an extra API call 
 will be executed if the parent link is available.
 
@@ -17,9 +17,9 @@ page_limit: The page limitation in case you need to define a page limit (Default
 
 Input Example:    
     {
-        "start_page":1,
-        "size":20,
-        "page_limit":3 (optional)
+        "start_page":1,  
+        "size":20,  
+        "page_limit":3 (optional)  
     }
 
 
