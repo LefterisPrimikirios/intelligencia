@@ -32,7 +32,7 @@ Set the parameters: `start_page` and `page_limit` accordingly to have incrementa
 
 
 ## How to execute ##
-1. Create a virtual enviroment in ols directory:   
+1. Create a virtual enviroment:   
     python3 -m venv venv
 
 2. Activate the venv:
