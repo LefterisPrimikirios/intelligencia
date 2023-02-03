@@ -56,17 +56,18 @@ ON efo_synonyms (obo_id, synonym);
 # Create the 'efo_ontology' table
 cur.execute("""
 CREATE TABLE IF NOT EXISTS efo_ontology (
-    ontology_id serial PRIMARY KEY,
-    obo_id VARCHAR(255),
-    parent_link VARCHAR(1024),
-    FOREIGN KEY (obo_id) REFERENCES efo_terms (obo_id)
+    ontology_num serial PRIMARY KEY,
+    ontology_id VARCHAR(255),
+    efo_terms_obo_id VARCHAR(255),
+    label VARCHAR(1024),
+    FOREIGN KEY (efo_terms_obo_id) REFERENCES efo_terms (obo_id)
 );
 """)
 
 # Create a unique index on the columns obo_id and synonym in the efo_synonyms table
 cur.execute("""
 CREATE UNIQUE INDEX IF NOT EXISTS efo_ontology_unique_index 
-ON efo_ontology (obo_id, parent_link);
+ON efo_ontology (ontology_id, efo_terms_obo_id);
 """)
 
 # Commit the changes to the database

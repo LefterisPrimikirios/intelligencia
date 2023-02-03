@@ -2,7 +2,9 @@
 
 This implementation is responsible to retrieve specific data provided by the Ontology Lookup Service repository https://www.ebi.ac.uk/ols/index
 and store them in PostgreSQL Database.
-
+EFO terms and EFO term synonyms will be retrieved from the endpoint:"https://www.ebi.ac.uk/ols/api/ontologies/efo/terms"
+EFO term ontology (parent links) will be retrieved from the parent link of each EFO term, meaning that for each EFO term an extra API call 
+will be executed if the parent link is available.
 
 ## Description ##
 In the app folder, there is a `main.py` module which is the starting point.
@@ -10,13 +12,13 @@ In the app folder, there is a `main.py` module which is the starting point.
 Define the bellow parameters:
 
 start_page: The page to start accessing the data.
-size: The number of items returned, up to a maximum of 500 for a single request.
+size: The number of items returned.
 page_limit: The page limitation in case you need to define a page limit (Default=100000)
 
 Input Example:    
     {
         "start_page":1,
-        "size":500,
+        "size":20,
         "page_limit":3 (optional)
     }
 

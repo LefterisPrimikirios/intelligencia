@@ -1,6 +1,6 @@
 import psycopg2
 
-def insert_data_to_db(efo_terms,efo_synonyms, efo_ontology):
+def insert_data_to_db(efo_terms,efo_synonyms, efo_terms_ontology):
     # Connect to the database
     conn = psycopg2.connect("dbname=ols_data")
 
@@ -24,12 +24,12 @@ def insert_data_to_db(efo_terms,efo_synonyms, efo_ontology):
         """, (synonym['obo_id'], synonym['synonym']))
 
     # Insert the EFO ontology into the 'efo_ontology' table
-    for ontology in efo_ontology:
+    for ontology in efo_terms_ontology:
         cur.execute("""
-        INSERT INTO efo_ontology (obo_id, parent_link)
-        VALUES (%s, %s)
-        ON CONFLICT (obo_id,parent_link) DO NOTHING;
-        """, (ontology['obo_id'], ontology['parent_link']))
+        INSERT INTO efo_ontology (ontology_id,efo_terms_obo_id, label)
+        VALUES (%s, %s, %s)
+        ON CONFLICT (ontology_id,efo_terms_obo_id) DO NOTHING;
+        """, (ontology['ontology_id'], ontology['efo_terms_obo_id'], ontology['label']))
 
     # Commit the changes to the database
     conn.commit()
